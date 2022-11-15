@@ -1,13 +1,8 @@
 <?php
 
 use App\Http\Controllers\AdminController;
-use App\Http\Controllers\Category\CreateController;
-use App\Http\Controllers\Category\DeleteController;
-use App\Http\Controllers\Category\EditController;
-use App\Http\Controllers\Category\IndexController;
-use App\Http\Controllers\Category\ShowController;
-use App\Http\Controllers\Category\StoreController;
-use App\Http\Controllers\Category\UpdateController;
+
+
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -27,7 +22,7 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::group(['prefix' => 'categories'], function () {
+Route::group(['prefix' => 'categories', 'namespace' => 'App\Http\Controllers\Category'], function () {
     Route::get('/', IndexController::class)->name('categories.index');
     Route::get('/create', CreateController::class)->name('categories.create');
     Route::post('/', StoreController::class)->name('categories.store');
@@ -35,6 +30,16 @@ Route::group(['prefix' => 'categories'], function () {
     Route::get('/{category}/edit', EditController::class)->name('categories.edit');
     Route::patch('/{category}', UpdateController::class)->name('categories.update');
     Route::delete('/{category}', DeleteController::class)->name('categories.delete');
+});
+
+Route::group(['prefix' => 'tags', 'namespace' => 'App\Http\Controllers\Tag'], function () {
+    Route::get('/', IndexController::class)->name('tags.index');
+    Route::get('/create', CreateController::class)->name('tags.create');
+    Route::post('/', StoreController::class)->name('tags.store');
+    Route::get('/{tag}', ShowController::class)->name('tags.show');
+    Route::get('/{tag}/edit', EditController::class)->name('tags.edit');
+    Route::patch('/{tag}', UpdateController::class)->name('tags.update');
+    Route::delete('/{tag}', DeleteController::class)->name('tags.delete');
 });
 
 
