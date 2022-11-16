@@ -1,16 +1,17 @@
 <?php
 
-namespace App\Http\Controllers\Category;
+namespace App\Http\Controllers\Color;
 
 use App\Http\Controllers\Controller;
 use App\Models\Category;
+use App\Models\Color;
 use Illuminate\Http\Request;
 
 class IndexController extends Controller
 {
     public function __invoke()
     {
-        $categories = Category::all();
-        return view('category.index', compact('categories'));
+        $colors = Color::all();
+        return view('color.index', compact('colors'));
     }
 }

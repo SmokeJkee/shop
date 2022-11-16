@@ -2,8 +2,8 @@
 @section('content')
 
     <div style="padding: 10px" >
-        <a href="{{route('categories.create')}}">
-            <button style="max-width: 200px" type="button" class="btn btn-block btn-outline-primary">Создать категорию</button>
+        <a href="{{route('colors.create')}}">
+            <button style="max-width: 200px" type="button" class="btn btn-block btn-outline-primary">Создать цвет</button>
         </a>
     </div>
     <div class="card-body table-responsive p-0 col-6">
@@ -13,18 +13,20 @@
                 <th>ID</th>
                 <th>Название</th>
                 <th>Дата создания</th>
+                <th>Цвет</th>
                 <th>Редактировать</th>
                 <th>Удалить</th>
             </tr>
             </thead>
             <tbody>
-            @foreach($categories as $category)
+            @foreach($colors as $color)
                 <tr>
-                    <td>{{$category->id}}</td>
-                    <td><a href="{{route('categories.show', $category)}}">{{$category->title}}</a></td>
-                    <td>{{$category->created_at}}</td>
-                    <td><a class='text-green' href="{{route('categories.edit', $category->id)}}"><i class="fas fa-edit"></i></a></td>
-                    <form action="{{route('categories.delete', $category->id)}}" method="post">
+                    <td>{{$color->id}}</td>
+                    <td><a href="{{route('colors.show', $color)}}">{{$color->title}}</a></td>
+                    <td>{{$color->created_at}}</td>
+                    <td><div style="width: 25px; height: 25px; background: {{'#'.$color->id}}"></div></td>
+                    <td><a class='text-green' href="{{route('colors.edit', $color->id)}}"><i class="fas fa-edit"></i></a></td>
+                    <form action="{{route('colors.delete', $color->id)}}" method="post">
                         @csrf
                         @method('delete')
                         <td><button class='border-0 bg-transparent' type="submit"><i class="fas fa-wrench text-danger" role="button"></i></button></td>
