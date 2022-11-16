@@ -9,5 +9,6 @@ class Color extends Model
 {
     use HasFactory;
 
+    protected $table = 'colors';
     protected $guarded = false;
 }
