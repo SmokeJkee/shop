@@ -47,11 +47,20 @@ Route::group(['prefix' => 'colors', 'namespace' => 'App\Http\Controllers\Color']
     Route::get('/', IndexController::class)->name('colors.index');
     Route::get('/create', CreateController::class)->name('colors.create');
     Route::post('/', StoreController::class)->name('colors.store');
-    Route::get('/{color}', ShowController::class)->name('colors.show');
+    Route::get('/{user}', ShowController::class)->name('colors.show');
     Route::get('/{color}/edit', EditController::class)->name('colors.edit');
     Route::patch('/{color}', UpdateController::class)->name('colors.update');
     Route::delete('/{color}', DeleteController::class)->name('colors.delete');
 });
 
+Route::group(['prefix' => 'users', 'namespace' => 'App\Http\Controllers\User'], function () {
+    Route::get('/', IndexController::class)->name('users.index');
+    Route::get('/create', CreateController::class)->name('users.create');
+    Route::post('/', StoreController::class)->name('users.store');
+    Route::get('/{user}', ShowController::class)->name('users.show');
+    Route::get('/{user}/edit', EditController::class)->name('users.edit');
+    Route::patch('/{user}', UpdateController::class)->name('users.update');
+    Route::delete('/{user}', DeleteController::class)->name('users.delete');
+});
 
 

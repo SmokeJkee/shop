@@ -1,16 +1,17 @@
 <?php
 
-namespace App\Http\Controllers\Category;
+namespace App\Http\Controllers\User;
 
 use App\Http\Controllers\Controller;
 use App\Models\Category;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class IndexController extends Controller
 {
     public function __invoke()
     {
-        $categories = Category::all();
-        return view('category.index', compact('categories'));
+        $users = User::all();
+        return view('user.index', compact('users'));
     }
 }
