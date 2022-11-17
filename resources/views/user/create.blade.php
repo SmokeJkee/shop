@@ -53,12 +53,13 @@
             <div class="text-danger">Это поле должно быть заполнено</div>
             @enderror
             <div class="form-group">
-                <label for="gender">Пол</label>
-                <input type="text" class="form-control" placeholder="Пол" name="gender">
+                <label>Пол</label>
+                <select class="form-control select2" style="width: 100%;" name="gender">
+                    <option disabled selected>Выберите пол</option>
+                    <option {{old('gender' == 2 ? 'selected' : '')}} value="2">Женский</option>
+                    <option {{old('gender' == 1 ? 'selected' : '')}} value="1">Мужской</option>
+                </select>
             </div>
-            @error('gender')
-            <div class="text-danger">Это поле должно быть заполнено</div>
-            @enderror
         </div>
         <div class="card-footer">
             <button type="submit" class="btn btn-primary">Создать</button>

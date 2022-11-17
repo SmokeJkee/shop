@@ -24,9 +24,17 @@
                 <label for="address">Адрес</label>
                 <input type="text" class="form-control" placeholder="Адрес" name="address" value="{{$user->address ?? old('address')}}">
             </div>
+            <div class="form-group">
+                <label>Пол</label>
+                <select class="form-control select2" style="width: 100%;" name="gender">
+                        <option disabled selected value="{{$user->gender}}">Сейчас ваш пол:  {{$user->genderTitle}}</option>
+                        <option  value="1">Мужчина</option>
+                        <option  value="2">Женщина</option>
+                </select>
+            </div>
         </div>
         <div class="card-footer">
-            <button type="submit" class="btn btn-primary">Создать</button>
+            <button type="submit" class="btn btn-primary">Редактировать</button>
         </div>
     </form>
 @endsection

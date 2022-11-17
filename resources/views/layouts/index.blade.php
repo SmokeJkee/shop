@@ -42,7 +42,7 @@
                 <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
             </li>
             <li class="nav-item d-none d-sm-inline-block">
-                <a href="#" class="nav-link">Home</a>
+                <a href="{{route('main.index')}}" class="nav-link">Home</a>
             </li>
         </ul>
     </nav>
@@ -119,7 +119,7 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="#" class="nav-link">
+                        <a href="{{route('tags.index')}}" class="nav-link">
                             <i class="nav-icon far fa-image"></i>
                             <p>
                                 Теги

@@ -25,7 +25,7 @@
                 <td>{{$user->email}}</td>
                 <td>{{$user->age}}</td>
                 <td>{{$user->address}}</td>
-                <td>{{$user->gender}}</td>
+                <td>{{$user->genderTitle}}</td>
             </tr>
         </tbody>
     </table>

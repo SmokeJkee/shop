@@ -16,7 +16,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/adm', AdminController::class)->name('main.index');
+Route::get('/', AdminController::class)->name('main.index');
 
 Auth::routes();
 
