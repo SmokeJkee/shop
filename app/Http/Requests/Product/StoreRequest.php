@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Requests\Category;
+namespace App\Http\Requests\Product;
 
 use Illuminate\Foundation\Http\FormRequest;
 
@@ -24,7 +24,16 @@ class StoreRequest extends FormRequest
     public function rules()
     {
         return [
-            'title' => 'required|string'
+            'title' => 'required|string',
+            'description' => 'nullable|string',
+            'content' => 'nullable|string',
+            'preview_image' => 'file',
+            'price' => 'integer',
+            'count' => 'integer',
+            'is_published' => '',
+            'category_id' => 'integer',
+            'tags' => 'array',
+            'colors' => 'array',
         ];
     }
 }
