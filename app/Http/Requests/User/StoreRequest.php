@@ -3,6 +3,7 @@
 namespace App\Http\Requests\User;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Validation\Rule;
 
 class StoreRequest extends FormRequest
 {
@@ -26,11 +27,12 @@ class StoreRequest extends FormRequest
         return [
             'name' => 'required|string',
             'surname' => 'required|string',
-            'email' => 'required|string|email|unique:users',
+            'email'=> ['required', Rule::unique('users')->where('deleted_at')],
             'age' => 'required|string',
             'address' => 'nullable|string',
             'password' => 'required|string|confirmed',
-            'gender' => 'nullable|string'
+            'gender' => 'nullable|string',
+
         ];
     }
 }

@@ -87,7 +87,7 @@
                          with font-awesome or any other icon font library -->
                     <li class="nav-item menu-open">
                     <li class="nav-item">
-                        <a href="#" class="nav-link">
+                        <a href="{{route('users.index')}}" class="nav-link">
                             <i class="nav-icon fas fa-users"></i>
                             <p>
                                 Пользователи
@@ -103,7 +103,7 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="#" class="nav-link">
+                        <a href="{{route('colors.index')}}" class="nav-link">
                             <i class="nav-icon fas fa-tag"></i>
                             <p>
                                 Цвета
@@ -111,7 +111,7 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="#" class="nav-link">
+                        <a href="{{route('categories.index')}}" class="nav-link">
                             <i class="nav-icon fas fa-tags"></i>
                             <p>
                                 Категории
