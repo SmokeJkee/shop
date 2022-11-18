@@ -24,7 +24,7 @@
                     <td>{{$color->id}}</td>
                     <td><a href="{{route('colors.show', $color)}}">{{$color->title}}</a></td>
                     <td>{{$color->created_at}}</td>
-                    <td><div style="width: 25px; height: 25px; background: {{'#'.$color->title}}"></div></td>
+                    <td><div style="width: 25px; height: 25px; background: {{$color->title}}"></div></td>
                     <td><a class='text-green' href="{{route('colors.edit', $color->id)}}"><i class="fas fa-edit"></i></a></td>
                     <form action="{{route('colors.delete', $color->id)}}" method="post">
                         @csrf
