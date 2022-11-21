@@ -24,7 +24,7 @@ class ProductFactory extends Factory
             'preview_image' => $this->faker->imageUrl,
             'price' => random_int(100, 2000),
             'count' => random_int(1, 110),
-            'is_published' => random_int(1,2),
+            'is_published' => random_int(0,1),
             'category_id' => Category::get()->random()->id,
         ];
     }

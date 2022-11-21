@@ -13,7 +13,7 @@
             </div>
             <div class="form-group">
                 <label for="content">Контент</label>
-                <textarea name="content" cols="30" rows="10"></textarea>
+                <textarea name="content" cols="47" rows="3"></textarea>
             </div>
             <div class="form-group">
                 <label for="price">Цена</label>
@@ -36,17 +36,19 @@
                 </div>
             </div>
             <div class="form-group">
-                <label>Цвет</label>
-                <select class="select2" name="colors[]" multiple="multiple" data-placeholder="Select a State" style="width: 100%;">
-                    <option value="1">Alabama</option>
-                    <option value="2">Alaska</option>
+                <label>Тег</label>
+                <select class="select2" name="colors[]" multiple="multiple" data-placeholder="Select a color" style="width: 100%;">
+                    @foreach($colors as $color)
+                        <option value="{{$color->id}}">{{$color->title}}</option>
+                    @endforeach
                 </select>
             </div>
             <div class="form-group">
                 <label>Тег</label>
-                <select class="select2" name="tags[]" multiple="multiple" data-placeholder="Select a State" style="width: 100%;">
-                    <option value="1">Alabama</option>
-                    <option value="2">Alaska</option>
+                <select class="select2" name="tags[]" multiple="multiple" data-placeholder="Select a tag" style="width: 100%;">
+                    @foreach($tags as $tag)
+                    <option value="{{$tag->id}}">{{$tag->title}}</option>
+                    @endforeach
                 </select>
             </div>
             <div class="form-group">

@@ -21,7 +21,7 @@ return new class extends Migration
             $table->string('preview_image');
             $table->integer('price');
             $table->integer('count');
-            $table->boolean('is_published')->default(1);
+            $table->unsignedSmallInteger('is_published')->default(1);
             $table->foreignId('category_id')->nullable()->index()->constrained('categories');
             $table->timestamps();
         });
